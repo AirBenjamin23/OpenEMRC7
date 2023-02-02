@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/",
         glue = "e2e/stepDefinitions",
-        tags = "@smoke",
-        dryRun = true,
+        tags = "@smoke1",
+        dryRun = false,
         plugin = {
                 "pretty",
                 "rerun:target/rerun.txt",
