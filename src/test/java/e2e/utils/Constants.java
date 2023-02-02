@@ -1,4 +1,4 @@
-package utils;
+package e2e.utils;
 
 public class Constants {
 
@@ -6,5 +6,4 @@ public class Constants {
 
     public static final int Implicit_Wait= 10;
     public static final int Explicit_Wait= 20;
-
 }

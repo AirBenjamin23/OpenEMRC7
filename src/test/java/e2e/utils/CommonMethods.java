@@ -1,5 +1,6 @@
-package utils;
+package e2e.utils;
 
+import e2e.stepDefinitions.PageInitializer;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,13 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import stepDefinitions.PageInitializer;
 
-import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
-import static utils.Constants.Explicit_Wait;
-import static utils.Constants.Implicit_Wait;
 
 public class CommonMethods extends PageInitializer {
 
@@ -48,7 +45,7 @@ public class CommonMethods extends PageInitializer {
             CommonMethods.getDriver();
             CommonMethods.getDriver().manage().window().maximize();
             CommonMethods.getDriver().get(ConfigReader.getProperties("url"));
-            CommonMethods.getDriver().manage().timeouts().implicitlyWait(Implicit_Wait, TimeUnit.SECONDS);
+            CommonMethods.getDriver().manage().timeouts().implicitlyWait(Constants.Implicit_Wait, TimeUnit.SECONDS);
             initializePageObjects();
      }
      public static void closeBrowser(){
@@ -58,7 +55,7 @@ public class CommonMethods extends PageInitializer {
             }
      }
      public static WebDriverWait getWait(){
-           WebDriverWait wait = new WebDriverWait(CommonMethods.getDriver(),Explicit_Wait);
+           WebDriverWait wait = new WebDriverWait(CommonMethods.getDriver(), Constants.Explicit_Wait);
            return wait;
      }
      public static void waitForClickable(WebElement element){
